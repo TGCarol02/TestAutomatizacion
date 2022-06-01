@@ -4,7 +4,7 @@ import io.restassured.response.Response;
 import org.json.JSONObject;
 import org.testng.annotations.Test;
 import utils.ExecuteRequest;
-import utils.GlobalVariable;
+import utils.GlobalVariables;
 
 public class PostRequestsAPIDemo {
 

@@ -26,7 +26,18 @@ public class GetRequestsAPIDemo {
 
         System.out.println(response.getBody().prettyPrint());
     }
+    @Test
+    public void buildGetRequest2(){
+        RestAssured.baseURI = "http://localhost:5000";
+        Response response = given()
+                .contentType(ContentType.JSON)
+                .when()
+                .get("/users/findbyemail/test@test.com")
+                .then()
+                .extract().response();
 
+        System.out.println(response.getBody().prettyPrint());
+    }
     @Test(groups = {"getAll","get"})
     public void getAllUsers(){
         String url = GlobalVariables.apiHost +  "/users/all";
