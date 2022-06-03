@@ -8,7 +8,7 @@ import utils.GlobalVariables;
 
 public class PostRequestsAPIDemo {
 
-    @Test(dataProviderClass = BodyGenerationDataProvider.class,
+    @Test(dataProviderClass = apitesting.postrequests.BodyGenerationDataProvider.class,
             dataProvider = "generateBodyContentMainClass",
             groups = {"postMethod"})
     public void postMethod(JSONObject bodyContent){

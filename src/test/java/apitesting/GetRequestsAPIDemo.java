@@ -49,7 +49,20 @@ public class GetRequestsAPIDemo {
             Assert.fail("Length should be 10");
         }
     }
-
+    @Test(groups={"countUsers"})
+    public void countUsernameWithNumberFive(){
+        int contador=0;
+        String url=GlobalVariables.apiHost+"/users/all";
+        Response response=ExecuteRequest.makeGetRequest(url);
+        System.out.println(response.asString());
+        JSONArray jsonArray=new JSONArray(response.asString());
+        for (int i = 0;i< jsonArray.length(); i++){
+        JSONObject jsonObject=jsonArray.getJSONObject(i);
+        String userName=jsonObject.getString("username");
+        if (userName.contains("5")) contador++;
+        System.out.println ("El numero de usuarios que contienen el número 5 es: "+contador);
+    }
+    }
     @Test
     public void findById(){
         String url = GlobalVariables.apiHost +  "/users/findbyid/14";
